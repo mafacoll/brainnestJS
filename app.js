@@ -2,16 +2,15 @@ alert("Hello\nWelcome to rock paper scissors!\nGood luck beating the machine ðŸ˜
 console.log(`Let's start the game!`)
 
 function computerPlay(){
-    let computerSelection = ''
-    let randomNumber = Math.floor(Math.random()*3)
+    let computerSelection  = Math.floor(Math.random()*3)
 
-    if(randomNumber <= 1){
-        computerSelection = "Rock"
+    if(computerSelection  <= 1){
+        return "Rock"
     }
-    else if(randomNumber <= 2){
-        computerSelection = "Paper"
+    else if(computerSelection  <= 2){
+        return "Paper"
     } else {
-        computerSelection = "Scissors"
+        return   "Scissors"
     }
 }
 
@@ -51,7 +50,7 @@ function game(){
         let playerSelection = player.toLowerCase().trim()
         let computerSelection = computerPlay()
       if ( playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
-        let result = playRound(playerSelection, computerSelection);
+        let result = singleRound(playerSelection, computerSelection);
         console.log("Player: " + playerSelection);
         console.log("Computer: " + computerSelection);
         if (result === "You win! Rock was a good choice!") {
